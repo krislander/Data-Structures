@@ -31,6 +31,7 @@ public:
 	void push(const T& element);
 	void pop();
 	void empty(); //raboti i kato print
+	void print();
 private:
 	//private methods
 	void copy(const Stack<T>& other);
@@ -128,8 +129,19 @@ void Stack<T>::empty()
 {
 	for (size_t i = 0; i <= this->size; i++)
 	{
-		cout << this->first->data << endl;
 		this->pop();
+	}
+}
+
+template<typename T>
+void Stack<T>::print()
+{
+	Node<T>* temp = this->first;
+
+	while (temp)
+	{
+		cout << this->first->data << endl;
+		this->first = this->first->next;
 	}
 }
 
